@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Mots de Passe</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Générateur de mots de passe</h1>
+        
+        <div class="password-display" id="passwordDisplay">
+            <span id="passwordText">Cliquez sur "Générer" pour créer un mot de passe</span>
+            <button class="copy-btn" id="copyBtn">📋 Copier</button>
+        </div>
+
+        <p class="warning" id="warning">Veuillez sélectionner au moins un type de caractère.</p>
+
+        <div class="length-section">
+            <div class="length-label">
+                <span>Longueur du mot de passe</span>
+                <span class="length-value" id="lengthValue">18</span>
+            </div>
+            <input type="range" title="password" label="password" id="lengthSlider" class="slider" min="12" max="30" value="18">
+        </div>
+
+        <div class="options-section">
+            <div class="section-title">Options de caractères</div>
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span>Minuscules (a-z)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span>Majuscules (A-Z)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="numbers" checked>
+                    <span>Nombres (0-9)</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="symbolsToggle" checked>
+                    <span>Symboles</span>
+                </label>
+            </div>
+
+            <div id="symbolsSection" class="symbols-section">
+                <div class="section-title">Types de symboles :</div>
+                <div class="symbols-group">
+                    <label class="symbol-item">
+                        <input type="checkbox" id="basicSymbols" checked>
+                        <span>Basiques <span class="symbol-chars">!@#$%</span></span>
+                    </label>
+                    <label class="symbol-item">
+                        <input type="checkbox" id="mathSymbols">
+                        <span>Math <span class="symbol-chars">^&*+-=</span></span>
+                    </label>
+                    <label class="symbol-item">
+                        <input type="checkbox" id="brackets">
+                        <span>Parenthèses <span class="symbol-chars">()[]{}</span></span>
+                    </label>
+                    <label class="symbol-item">
+                        <input type="checkbox" id="punctuation">
+                        <span>Ponctuation <span class="symbol-chars">.,;:</span></span>
+                    </label>
+                    <label class="symbol-item">
+                        <input type="checkbox" id="special">
+                        <span>Spéciaux <span class="symbol-chars">|\_~`</span></span>
+                    </label>
+                    <label class="symbol-item">
+                        <input type="checkbox" id="quotes">
+                        <span>Guillemets <span class="symbol-chars">"'`</span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="strength-meter">
+            <div class="strength-text">
+                <span>Force du mot de passe</span>
+                <span class="strength-score" id="strengthScore">-</span>
+            </div>
+            <div class="strength-bar-container">
+                <div class="strength-bar" id="strengthBar"></div>
+            </div>
+        </div>
+
+        <button class="generate-btn" id="generateBtn">Générer un mot de passe</button>
+    </div>
+    <script src="./index.js" defer></script>
+</body>
+</html>
